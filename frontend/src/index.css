@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+@theme {
+  --font-poppins: "Poppins", sans-serif;
+}
+
+@utility input-modern {
+  @apply w-full rounded-xl border border-gray-200 bg-white px-4 py-3
+         text-gray-900 outline-none font-semibold
+         transition-all duration-200
+         placeholder:text-gray-400
+         hover:border-gray-300
+         focus:border-gray-400 focus:ring-4 focus:ring-gray-100
+         disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-400;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
+@utility select-modern {
+  @apply w-full rounded-xl border border-gray-200 bg-white px-4 py-3
+         text-gray-900 outline-none font-semibold
+         transition-all duration-200
+         hover:border-gray-300
+         focus:border-gray-400 focus:ring-4 focus:ring-gray-100
+         disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-400;
+
+  & .select-option {
+    @apply bg-white text-gray-900;
+  }
+
+  & .select-option:checked {
+    @apply bg-gray-100 text-gray-900;
+  }
+}
+
+@utility form-field {
+  @apply flex flex-col gap-1;
+}
+
+@utility form-label {
+  @apply text-sm font-medium text-gray-700;
+}
+
+@utility form-error {
+  @apply text-xs text-red-600;
+}
+
+@utility dropdown-scroll {
+  @apply max-h-[300px] overflow-y-auto;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-gray-300;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400 cursor-pointer;
+  }
+
+  scrollbar-width: thin;
+  scrollbar-color: #d1d5db transparent;
+}
